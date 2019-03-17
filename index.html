@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="main.css">
     <meta charset="UTF-8">
@@ -7,7 +8,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
+    <label for="Temperature">Temperature:</label>
+
+    <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10">
+    
+
+    <div>
+        <input type="radio" id="fahrenheit" name="drone" value="fahrenheit" checked>
+        <label for="fahrenheit">Fahrenheit</label>
+    </div>
+
+    <div>
+        <input type="radio" id="celsius" name="drone" value="celsius">
+        <label for="celsius">Celsius</label>
+    </div>
+
+    <p>This will hold the text of the converted temperature.</p>
+
+    <button class="favorite styled"
+        type="button">
+        Convert Temp  
+     </button>
+
+     <button class="favorite styled"
+        type="button">
+        Clear  
+     </button>
+
     <script src="main.js"></script>
 </body>
+
 </html>
