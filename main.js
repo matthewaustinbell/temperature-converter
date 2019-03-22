@@ -1,29 +1,19 @@
-console.log('hello');
+const celciusInput = document.querySelector('#celcius > input'); 
+const fahrenhietInput = document.querySelector ('#fahrenheit > input');
 
-const toCelsius =  () => {
+function celciusToFahrenhiet() {
+  const cTemp = parseFloat(celciusInput.value);
+  const fTemp = (cTemp * (9/5)) + 32;
+  fahrenhietInput.value = fTemp;
+ 
+ }
 
-    
-    if (degree == "C") {
-      x = document.getElementById("c").value * 9 / 5 + 32;
-      document.getElementById("f").value = Math.round(x);
-    } else {
-      x = (document.getElementById("f").value -32) * 5 / 9;
-      document.getElementById("c").value = Math.round(x);
+ function fahrenheitToCelcius() {
+   const fTemp = parseFLoat(fahrenhietInput.value);
+   const cTemp = (fTemp - 32) * (5/9);
+   celciusInput.value = cTemp;
 
-}
+ }
 
-const toFahrenheit =  () => {
+celciusInput.addEventListener('input', celciusToFahrenhiet);
 
-}
-
-// Get a reference to the button element in the DOM
-const button = document.getElementById("converter");
-
-// This function should determine which conversion should
-// happen based on which radio button is selected.
-const determineConverter = (e) => {
-  console.log("event", e);
-}
-
-// Assign a function to be executed when the button is clicked
-button.addEventListener("click", determineConverter);
