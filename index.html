@@ -10,36 +10,37 @@
 </head>
 
 <body>
-    <div id="celcius">
+    <!-- <div id="celcius">
         <input type="number" placeholder="celcius...">
     </div>
     <div id="fahrenheit">
             <input type="number" placeholder="fahrenheit...">
-        </div>
+        </div> -->
     <label for="Temperature">Temperature:</label>
 
     <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10">
 
 
     <div>
-        <input type="radio" id="fahrenheit" name="drone" value="fahrenheit" checked>
+        <input type="radio" id="fahrenheit" name="degreeType" value="fahrenheit" checked>
         <label for="fahrenheit">Fahrenheit</label>
     </div>
 
     <div>
-        <input type="radio" id="celsius" name="drone" value="celsius">
+        <input type="radio" id="celsius" name="degreeType" value="celsius">
         <label for="celsius">Celsius</label>
     </div>
 
-    <p>This will hold the text of the converted temperature.</p>
 
-    <button class="favorite styled" type="button">
+    <button class="favorite styled" id="convert-button" type="button">
         Convert Temp
     </button>
 
-    <button class="favorite styled" type="button">
+    <button class="favorite styled" id="clear-button" type="button">
         Clear
     </button>
+    <div id='divOutput'></div>
+    
     <script src="main.js"></script>
 </body>
 
