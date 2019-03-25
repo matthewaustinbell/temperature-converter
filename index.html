@@ -6,42 +6,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>TEMPERATURE CONVERTER</title>
 </head>
 
 <body>
-    <!-- <div id="celcius">
-        <input type="number" placeholder="celcius...">
-    </div>
-    <div id="fahrenheit">
-            <input type="number" placeholder="fahrenheit...">
-        </div> -->
-    <label for="Temperature">Temperature:</label>
+  <input type='number' placeholder='Enter the Temperature' id='celsius' />
+  <p/>
+<input type='number' placeholder='Fahrenheit is' id='fahrenheit' disabled /><p/>
 
-    <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10">
+<div>
+<input type='radio' name='Celsius to Fahrenheit' id='C2f' onClick='step1()'  />
+<label for="Fahrenheit">Fahrenheit</label>
+</div>
+<div>
+<input type='radio' name='Fahrenheit to Celsius' id='f2C' onclick='step2()' /><p/>
+<label for="Celsius">Celsius</label>
+</div>
+<!-- convert button  -->
+<div>    
+<input type='button' onClick='valid()' value='Convert'>
+</div>
+<!-- clear button  -->
+<div>
+        <input type="button" value="Clean" onClick="Clean()"/>
+</div>
 
-
-    <div>
-        <input type="radio" id="fahrenheit" name="degreeType" value="fahrenheit" checked>
-        <label for="fahrenheit">Fahrenheit</label>
-    </div>
-
-    <div>
-        <input type="radio" id="celsius" name="degreeType" value="celsius">
-        <label for="celsius">Celsius</label>
-    </div>
-
-
-    <button class="favorite styled" id="convert-button" type="button">
-        Convert Temp
-    </button>
-
-    <button class="favorite styled" id="clear-button" type="button">
-        Clear
-    </button>
-    <div id='divOutput'></div>
-    
-    <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 
 </html>
+<!-- i need a clear button  -->
+<!-- html a button 
+js function of clearing input box  -->
+<!-- then make the part relsult of that number turn red or green  -->

@@ -1,77 +1,36 @@
+var cel = document.getElementById('celsius')
+var far = document.getElementById('fahrenheit')
 
+var C2f = document.getElementById('C2f')
+var f2C = document.getElementById('f2C')
 
-// const celciusInput = document.querySelector('#celcius > input'); 
-// const fahrenheitInput = document.querySelector ('#fahrenheit > input');
-const tempConverterButton = document.querySelector('#convert-button');
-const clearButton = document.querySelector('#clear-button');
-const divOutput = document.querySelector('#divOutput'); 
-const determineConverter = (e) => {
-  let degreeValue = document.querySelector('input[name="degreeType"]:checked').value;
-  if (degreeValue === 'fahrenheit'){
-    fahrenheitToCelcius();
-  } else if (degreeValue === "celsius"){ 
-    celciusToFahrenheit();
-  };
+function step1() {
+  f2C.checked = false
 }
 
-function roundNum(num) {
-  return Math.round(num*100)/100; 
+function step2() {
+  C2f.checked = false
 }
 
-function celciusToFahrenheit() {
-  console.log('toC function running');
-  const cTemp = parseFloat(celciusInput.value);
-  const fTemp = (cTemp * (9/5)) + 32;
-  fahrenheitInput.value = roundNum(fTemp);
-  celciusInput.value = roundNum(cTemp);
- }
-
- function fahrenheitToCelcius() {
-  console.log('toF function running');
-   const fTemp = parseFloat(fahrenheitInput.value);
-   const cTemp = (fTemp - 32) * (5/9);
-   celciusInput.value = roundNum(cTemp);
-   fahrenheitInput.value = roundNum(fTemp);
- }
-
- const printToDom = (divId, textToPrint) => {
-  const selectedDiv = document.getElementById(divId);
-  selectedDiv.innerHTML = textToPrint;
- };
-
- 
-function main() {
-//   celciusInput.addEventListener('input', celciusToFahrenheit);
-//   fahrenheitInput.addEventListener('input', fahrenheitToCelcius);
-  tempConverterButton.addEventListener('click',determineConverter);
+function valid() {
+  if (C2f.checked) {
+    c2f()
+  } else if (f2C.checked) {
+    f2c()
+  }
 }
 
-main();
-
-// input number
-
-// select parameter 
-
-// select convert button to see converted temp displayed    
-// ---create a variable for covert button 
-// ---add an event listener to the button 
+function Clean(){
+  document.getElmentById('display').innerHTML='';
+}
 
 
-// determine which radio button is selected
-// run a fun formula inside the  function 
-//---if ctemp covert to farenhiet 
-//---else if ftemp converter to celcius
+function c2f() {
+  far.value = (1.8 * cel.value) + 32
+  console.log(cel.value + ' Celsius is equal to ' + far.value + ' fahrenheit')
+}
 
-// use a print to dom function to return a value of the converted temp
-// --- 
-
-
-
-
-
-
-
-
-
-
-
+function f2c() {
+  far.value = (cel.value - 32) / 1.8
+  console.log(cel.value + ' Fahrenheit is equal to ' + far.value + ' celsius')
+}
