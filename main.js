@@ -1,49 +1,16 @@
-var cel = document.getElementById('celsius')
-var far = document.getElementById('fahrenheit')
-
-var C2f = document.getElementById('C2f')
-var f2C = document.getElementById('f2C')
-
-//trying some code sent from matt gill
-const printToDom = (divId, textToPrint) => {
-  const selectedDiv = document.getElementById(divId);
-  selectedDiv.innerHTML = textToPrint;
-  };
-
-const domStringBuilder = (temperature, unitOfTemp) => {
-  if (finalTemp > 32 && unit === 'C'){
-  domString = `<div class='textRed'>${finalTemp.toFixed(2)} degrees ${unit}</div>`;
-  printToDom('tempOutput', domString);
-}
-  else if (finalTemp > 90 && unit === 'F'){
-  domstring = `<div class='textRed'>${finalTemp.toFixed(2)} degrees ${unit}</div>`;
-  printToDom('tempOutput', domString);
-}
-
-  else if (finalTemp < 0 && unit === 'C'){
-      domString = `<div class='textBlue'></div?`;
-      printToDom('tempOutput', domString);
-      }
-      else if (finalTemp < 32 && unit === 'F'){
-      domstring = `<div class='textBlue'>${finalTemp.toFixed(2)} degrees ${unit}</div>`;
-      printToDom('tempOutput', domString);
-  }
-  else {
-      domString = `<div class='textGreen'>${finalTemp.toFixed(2)} degrees ${unit}</div>`;
-      printToDom('tempOutput', domString);
-  }  
-};
-//this is the end of the code from matt gill
-
-// function step1() {
-//   f2C.checked = false
-// }
-
-// function step2() {
-//   C2f.checked = false
-// }
+const cel = document.getElementById('celsius')
+const far = document.getElementById('fahrenheit')
+const C2f = document.getElementById('C2f')
+const f2C = document.getElementById('f2C')
 
 
+function step1() {
+  f2C.checked = false
+ }
+
+ function step2() {
+   C2f.checked = false
+ }
 
 //radio functions
 function valid() {
@@ -54,36 +21,36 @@ function valid() {
   }
 }
 
-function Clean(){
-  document.getElementById('display').innerHTML='';
+function clean(){
+ let cleanInput = document.getElementById('celsius');
+  cleanInput.value = '';
 }
 
 
 function c2f() {
   far.value = (1.8 * cel.value) + 32
-  let color = 'green';
-  if(far.value>90){
-    color = 'red';
-  }
-  else if (far.value<32){
-    color = 'blue';
-  }
-  document.getElementById('divOutput').style.color = color;
-  domStringBuilder = `<h2>${value} degrees C</h2>`
-  //console.log(cel.value + ' Celsius is equal to ' + far.value + ' fahrenheit')
+    if (far.value >= 90){
+      document.body.classList.add("red");
+    }
+    else if (far.value <= 32){
+      document.body.classList.add("blue")}
+    else (document.body.classList.add("green"))
+    // in the portion above we grabbed the class the whole BODY with document. and passed in the css class red. 
+    // remove a class 
+  
 }
 
 function f2c() {
   far.value = (cel.value - 32) / 1.8
-  let color = 'green';
-  if(value>90){
-    color = 'red';
+  if (far.value >= 32){
+    document.body.classList.add("red");
   }
-  else if (value<32){
-    color = 'blue';
-  }
-  document.getElementById('divOutput').style.color = color;
-  domStringBuilder = `<h2>${value} degrees C</h2>`
-
-  //console.log(cel.value + ' Fahrenheit is equal to ' + far.value + ' celsius')
+  else if (far.value <= 0){
+    document.body.classList.add("blue")}
+  else (document.body.classList.add("green"))
 }
+
+document.getElementById('convertButton').addEventListener('click', valid);
+document.getElementById('clearButton').addEventListener('click', clean);
+//document.getElementById('celsius').addEventListener('keypress', valid);
+//document.getElementById('fahrenheit').addEventListener('keypress', valid);

@@ -15,20 +15,20 @@
 <input type='number' placeholder='Fahrenheit is' id='fahrenheit' disabled /><p/>
 
 <div>
-<input type='radio' name='Celsius to Fahrenheit' id='C2f' onClick='step1()'  />
+<input type='radio' name='Temp' id='C2f' />
 <label for="Fahrenheit">Fahrenheit</label>
 </div>
 <div>
-<input type='radio' name='Fahrenheit to Celsius' id='f2C' onclick='step2()' /><p/>
+<input type='radio' name='Temp' id='f2C' /><p/>
 <label for="Celsius">Celsius</label>
 </div>
 <!-- convert button  -->
 <div>    
-<input type='button' onClick='valid()' value='Convert'>
+<input type='button' id='convertButton' value='Convert'>
 </div>
 <!-- clear button  -->
 <div>
-        <input type="button" value="Clean" onClick="Clean()"/>
+    <input type='button' id='clearButton' value='clear' />
 </div>
 
 <script src="main.js"></script>
